@@ -16,7 +16,7 @@ class FocalLoss(nn.Module):
         if not classnum: print("Enter parameters: classnum and alpha.\nUsage: loss_fc = FocalLoss(4, [10000, 20000, 20000, 9000])")
         self.alpha = sum(alpha)/torch.tensor(alpha, dtype=torch.float32)
         self.alpha = self.alpha/self.alpha.sum()
-        print(self.alpha)
+        # print(self.alpha)
         self.gamma = gamma
 
     def forward(self, inputs, targets):

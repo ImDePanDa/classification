@@ -28,7 +28,7 @@ class FocalLoss(nn.Module):
         # print(res_softmax)
         pt = torch.masked_select(res_softmax, mask)
         # print(pt)
-        loss = -(self.alpha)*((1-pt)**self.gamma)*torch.log(pt)
+        loss = -(self.alpha)*(torch.pow((1-pt), self.gamma))*torch.log(pt)
         loss = torch.mean(loss)
         return loss
 

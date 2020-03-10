@@ -1,3 +1,4 @@
+import os
 import sys
 import torch
 import torch.nn as nn 
@@ -10,6 +11,7 @@ from datasets import csvdataset
 from sklearn.metrics import confusion_matrix
 from utils import Logger
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 torch.cuda.empty_cache()
 
 # net = foodnet().cuda() if torch.cuda.is_available() else foodnet()
